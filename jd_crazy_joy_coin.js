@@ -32,12 +32,12 @@ if ($.isNode()) {
   let count = 0
 
   if (cookiesArr.length && $.isNode()) {
-    console.log(`\n挂机开始，自动8s收一次金币`);
+    console.log(`\n挂机开始，自动10s收一次金币`);
     //兼容iOS
     setInterval(async () => {
       const promiseArr = cookiesArr.map(ck => getCoinForInterval(ck));
       await Promise.all(promiseArr);
-    }, 8000);
+    }, 2400000);
   }
 
   while (true) {
